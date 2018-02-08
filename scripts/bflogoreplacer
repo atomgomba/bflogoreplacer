@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+import sys
+from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
+
+from bflogoreplacer import replace_logo
+
+
+def main(args):
+    output = replace_logo(args.mcm_file, args.image_file)
+    if not args.output_file:
+        print(output)
+    else:
+        with open(args.output_file, "r") as f:
+            f.write(output)
+    return 0
+
+
+if __name__ == "__main__":
+    parser = ArgumentParser(formatter_class=ArgumentDefaultsHelpFormatter)
+    parser.add_argument("mcm_file", help="Path to Betaflight OSD font file")
+    parser.add_argument("image_file", help="Path to source image file")
+    parser.add_argument("-o", "--output_file",
+                        help="Path to output font file (will print the result to stdout when omitted)")
+
+    sys.exit(main(parser.parse_args()))

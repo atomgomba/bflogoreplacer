@@ -1,0 +1,12 @@
+/.idea
+/env
+/venv
+__pycache__
+/dist
+/build
+/MANIFEST
+bflogoreplacer.egg-info
+*.mcm
+*.png
+!/samples/*
+
