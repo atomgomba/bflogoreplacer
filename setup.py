@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
-import os
 from setuptools import setup
+
+from bflogoreplacer import __version__, __author__, __email__, __license__
 
 if __name__ == "__main__":
     setup(name="bflogoreplacer",
-          version="0.1.2",
+          version=__version__,
           description="Tools for customizing the logo in a Betaflight OSD font",
-          author="Károly Kiripolszky",
-          author_email="karcsi@ekezet.com",
+          author=__author__,
+          author_email=__email__,
           url="https://github.com/atomgomba/bflogoreplacer",
           packages=["bflogoreplacer"],
           scripts=['scripts/bflogoreplacer'],
-          license="GPLv3",
+          license=__license__,
           )
