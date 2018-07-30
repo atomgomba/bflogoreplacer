@@ -4,12 +4,12 @@ Tools for customizing the logo in a Betaflight OSD font.
 Some code were taken and modified from here:
 https://github.com/Knifa/MAX7456-Font-Tools
 """
-from typing import Generator
+from typing import Iterator
 
 from .common import *
 
 
-def _iter_mcm_tiles(filepath: str) -> Generator[MaxTile, None, None]:
+def _iter_mcm_tiles(filepath: str) -> Iterator[MaxTile]:
     """Iterate tiles in an MCM font.
 
     :param filepath: path to an MCM file
@@ -59,7 +59,7 @@ def _mcm_tile_from_image(image: ImageType) -> MaxTile:
     return lines
 
 
-def _iter_image_tiles(filepath: str) -> Generator[MaxTile, None, None]:
+def _iter_image_tiles(filepath: str) -> Iterator[MaxTile]:
     """Iterate tiles in an image.
 
     :param filepath: path to an image file
